@@ -4,12 +4,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextGame</title>
     <style>
-
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            font-family: Roboto;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(https://wallpaperaccess.com/full/2632299.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            height: 45vh;
+            width: 30vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .nav{
+            width: 30vw;
+            height: 10vh;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        button{
+            width: 98px;
+            height: 20px;
+            background-color: aliceblue;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .main1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            width: 30vw;
+            height: 34vh;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            text-shadow: 1px 0.3px;
+            color: rgb(0, 0, 0);
+        }
+        .buttons{
+            width: 30vw;
+            height: 10vh;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            background-color: black;
+        }
+        .status{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 35px;
+            border-radius: 10px;
+            height: 20vh;
+            width: 30vw;
+            background-color: black;
+            color: white;
+            font-size: 10px;
+        }
+        .words{
+            animation: animation alternate 2s 1;
+        }
+        @keyframes animation{
+            from{opacity: 0;}
+            to{opacity: 1;};
+        }
     </style>
 </head>
 <body>
     <main>
-
+        
+        <div id="nav" class="nav">
+            <div class="status" id="status">
+                <p>Health: <span id="health"></span></p>
+                <p>Xp: <span id="xp"></span></p>
+                <p>Weapon: <span id="weapon"></span></p>
+                <p>Power: <span id="power"></span></p>
+                <p>Money: <span id="money"></span></p>
+            </div>
+         <div class="buttons">
+            <button id="button1">G0 to forest</button>
+            <button id="button2">Fight the boss</button>
+            <button id="button3">Go to shop</button>
+         </div>
+        </div>
+        <div id="main1" class="main1">
+            <p style="font-weight: 500;" id="text">Hello! Comrade, 
+                Welcome to Mop, an immersive text based MMORPG where you can forge your own destiny! Dive into a rich fantasy world filled with epic quests, legendary monsters, and vibrant communities. Create your character, choose your class, and embark on adventures with friends or brave the challenges solo. Every decision you make will shape your journey, from crafting powerful items to engaging in fierce battles. Will you become a mighty hero, a cunning rogue, or a wise mage? The realm is yours to explore, begin your epic adventure now!</p>
+        </div>
+        
     </main>
     <script src="TextGame.js"></script>
 </body>
