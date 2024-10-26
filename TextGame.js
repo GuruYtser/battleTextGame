@@ -13,25 +13,23 @@ main.classList.add('words');
 
 const forestPlaces = [
     {
-        placeName: `WestWoods🌵`,
+        placeName: `Entering WestWoods🌵`,
         buttons: westWoods() 
     },
     {
-        placeName: `NorthWoods🌲`,
+        placeName: `Entering NorthWoods🌲`,
         buttons: northWoods() 
     },
     {
-        placeName: `EastWoods🌳`,
+        placeName: `Entering EastWoods🌳`,
         buttons: eastWoods()
     },
     {
-        placeName: `SouthWoods🌴`,
+        placeName: `Entering SouthWoods🌴`,
         buttons: southWoods()
     },
 ]
 
-let index = Math.floor(Math.random() * forestPlaces.length);
-const {placeName, buttons} = forestPlaces[index];
 
 class weapons{
     constructor(weapon, power){
@@ -44,9 +42,7 @@ class weapons{
     }
 }
 let dagger = new weapons(`dagger`, 100);
-let sword = new weapons(`sword`);
 let hammer = new weapons(`hammer`, 200);
-let spear = new weapons(`spear`);
 
 function westWoods(){
     button1.innerText = ``
@@ -103,13 +99,22 @@ money.innerText = moneys;
 
 function forestEntered(){
     text.innerText = `you've entered the forest. You better watch out!`;
+    
     text.classList.add('words');
     button1.innerText = `Go back?`;
     button2.innerText = `Gather Wood`;
-    button3.innerText = `fight slime`;
+    button3.innerText = `Explore`;
     button1.addEventListener('click', back);
     button2.addEventListener('click', () =>{
 
+    }) 
+    button3.addEventListener('click', () =>{
+    let index = Math.floor(Math.random() * forestPlaces.length);
+    const {placeName, buttons} = forestPlaces[index];
+    text.innerText = placeName;
+    setTimeout(() =>{
+        buttons
+    }, 3000);
     })
 }
 function bossfight(){
