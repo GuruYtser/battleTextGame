@@ -120,7 +120,7 @@ function forestEntered(){
 function bossfight(){
     text.innerText = `are you sure you wanna fight the boss?`;
     text.classList.add('words');
-    button1.innerText = ``
+    button1.innerText = `retreat`;
 }
 function heretics(){
     button1.innerText = `Fight Heretics`;
