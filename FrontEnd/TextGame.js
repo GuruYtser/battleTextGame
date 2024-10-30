@@ -44,13 +44,15 @@ class weapons{
 let dagger = new weapons(`dagger`, 100);
 let hammer = new weapons(`hammer`, 200);
 
+
+
 function westWoods(){
     button1.innerText = ``
     button2.innerText = ``
     button3.innerText = ``
     button1.addEventListener('click', () =>{
         
-    })
+    });
 }
 function northWoods(){
     button1.innerText = ``
@@ -61,6 +63,15 @@ function eastWoods(){
 function southWoods(){
     button1.innerText = ``
 }
+let healths = 100;
+let xps = 0;
+let powers = 0;
+let moneys = 0;
+
+health.innerText = healths;
+xp.innerText = xps;
+power.innerText = powers;
+money.innerText = moneys;
 
 function fight(){
     text.innerText = `be careful`;
@@ -79,27 +90,17 @@ function buy(){
     button1.addEventListener('click', () =>{
         if(moneys < 50){text.innerText = `insufficient money`;}
         else if(moneys >= 50){weapon.innerText = hammer.wet();}
+        else if(weapon.innerText = hammer){text.innerText = 'you already have one'};
     });
     button2.addEventListener('click', () =>{
         if(moneys < 30){text.innerText = `insufficient money`;}
         else weapon.innerText = dagger.wet();
-    })
+    });
     button3.addEventListener('click', back);
 } 
 
-let healths = 100;
-let xps = 0;
-let powers = 0;
-let moneys = 0;
-
-health.innerText = healths;
-xp.innerText = xps;
-power.innerText = powers;
-money.innerText = moneys;
-
 function forestEntered(){
     text.innerText = `you've entered the forest. You better watch out!`;
-    
     text.classList.add('words');
     button1.innerText = `Go back?`;
     button2.innerText = `Gather Wood`;
@@ -109,31 +110,48 @@ function forestEntered(){
 
     }) 
     button3.addEventListener('click', () =>{
+    main.classList.add('animation');
     let index = Math.floor(Math.random() * forestPlaces.length);
     const {placeName, buttons} = forestPlaces[index];
     text.innerText = placeName;
     setTimeout(() =>{
-        buttons
+        buttons();
     }, 3000);
-    })
-}
+    });
+};
 function bossfight(){
     text.innerText = `are you sure you wanna fight the boss?`;
     text.classList.add('words');
     button1.innerText = `retreat`;
+    button2.innerText = `Fight`;
+    button3.innerText = ``;
+    button2.addEventListener('click', ()=>{
+    if(weapon.innerText === "hammer"){healths -= 50}
+    else if(weapon.innerText === "dagger"){healths -= 100, text.innerText = `You Died`};
+    health.innerText = health;   
+    });
+    button1.addEventListener('click', ()=>{
+
+    })
 }
 function heretics(){
     button1.innerText = `Fight Heretics`;
     button2.innerText = `Run`;
-    button3.innerText = `Go back`;
+    button3.innerText = `Kill slimes`;
     button1.addEventListener('click', ()=>{
-    
+        healths -= 10;
+        moneys += 10;
+        text.innerText = `Heretics killed earned ${moneys}`;
     })
     button2.addEventListener('click', ()=>{
-        
+        forestEntered();
+    });
+    button3.addEventListener('click', ()=>{
+        text.innerText = `Slimes killed earned${moneys += 10}`;
     })
 }
 function back(){
+    text.classList.add('words');
     button1.innerText = `Go to forest`;
     button2.innerText = `Fight the boss`;
     button3.innerText = `Go to shop`;

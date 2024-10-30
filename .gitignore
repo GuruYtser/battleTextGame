@@ -1,1 +1,4 @@
 node_modules
+.env
+random
+BackEnd

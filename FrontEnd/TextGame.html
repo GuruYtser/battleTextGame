@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextGame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         *{
@@ -87,6 +88,29 @@
             from{opacity: 0;}
             to{opacity: 1;};
         }
+        footer{
+            height: 5vh;
+            width: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            text-shadow: 1px 0.3px;
+            color: rgb(0, 0, 0);
+            border-radius: 100px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .github{
+            height: 5vh;
+            width: 10vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
     </style>
 </head>
 <body>
@@ -101,17 +125,19 @@
                 <p>Money: <span id="money"></span></p>
             </div>
          <div class="buttons">
-            <button id="button1">G0 to forest</button>
-            <button id="button2">Fight the boss</button>
-            <button id="button3">Go to shop</button>
+            <button id="button1"></button>
+            <button id="button2"></button>
+            <button id="button3"></button>
          </div>
         </div>
         <div id="main1" class="main1">
             <p style="font-weight: 500;" id="text">Hello! Comrade, 
                 Welcome to Mop, an immersive text based MMORPG where you can forge your own destiny! Dive into a rich fantasy world filled with epic quests, legendary monsters, and vibrant communities. Create your character, choose your class, and embark on adventures with friends or brave the challenges solo. Every decision you make will shape your journey, from crafting powerful items to engaging in fierce battles. Will you become a mighty hero, a cunning rogue, or a wise mage? The realm is yours to explore, begin your epic adventure now!</p>
-        </div>
-        
+        </div>   
     </main>
+    <footer>
+        <div class="github"><a href="https://github.com/GuruYtser/battleTextGame">source code: <i class="fa-brands fa-github"></i></a></div>
+    </footer>
     <script src="TextGame.js"></script>
 </body>
 </html>
