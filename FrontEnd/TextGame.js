@@ -107,7 +107,8 @@ function forestEntered(){
     button3.innerText = `Explore`;
     button1.addEventListener('click', back);
     button2.addEventListener('click', () =>{
-
+        text.innerText = `Gathered Wood earned ${moneys += 5}`;
+        money.innerText = moneys
     }) 
     button3.addEventListener('click', () =>{
     main.classList.add('animation');
@@ -127,10 +128,23 @@ function bossfight(){
     button3.innerText = ``;
     button2.addEventListener('click', ()=>{
     if(weapon.innerText === "hammer"){healths -= 50}
-    else if(weapon.innerText === "dagger"){healths -= 100, text.innerText = `You Died`};
-    health.innerText = health;   
+    else if(weapon.innerText === "dagger"){
+    health.innerText = 0
+    text.innerText = `You Died`;
+    weapon.innerText = '';
+    power.innerText = 0;
+    health.innerText = 100;
+    moneys = 0;
+    setTimeout(()=>{
+     back();    
+    }, 3000);
+}
+    else if(weapon.innerText === ""){text.innerText = `you don't have weapon to fight this boss sicko!`};  
     });
     button1.addEventListener('click', ()=>{
+        back();
+    })
+    button2.addEventListener('click', ()=>{
 
     })
 }
@@ -148,6 +162,7 @@ function heretics(){
     });
     button3.addEventListener('click', ()=>{
         text.innerText = `Slimes killed earned${moneys += 10}`;
+        money.innerText = moneys;
     })
 }
 function back(){
@@ -159,6 +174,8 @@ function back(){
     button1.addEventListener('click', forestEntered);
     button2.addEventListener('click', bossfight);
     button3.addEventListener('click', buy);
+    if(healths < 98){health.innerText = healths = 100}
+    else if(healths == 100){text.innerText = ``}
 }
 
 button1.addEventListener('click', forestEntered);
